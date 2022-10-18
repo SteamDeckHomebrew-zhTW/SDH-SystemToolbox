@@ -24,11 +24,11 @@ const Content: VFC<{ server: ServerAPI }> = ({server}) => {
 
     return (
         <PanelSection>
-            <PanelSection title="Services">
+            <PanelSection title="服務">
                 <PanelSectionRow>
                     <ToggleField
-                        label="Remote Terminal Access"
-                        description="Gives access to the Deck over SSH"
+                        label="遠端終端存取"
+                        description="允許使用 SSH 存取 Deck"
                         checked={sshServerToggleValue}
                         onChange={(value: boolean) => {
                             backend.setSSHServerState(value);
@@ -39,8 +39,8 @@ const Content: VFC<{ server: ServerAPI }> = ({server}) => {
 
                 <PanelSectionRow>
                     <ToggleField
-                        label="Remote Debugging Access"
-                        description="Forwards the Steam CEF debugger"
+                        label="遠端偵錯存取"
+                        description="轉發 Steam CEF 遠端偵錯"
                         checked={cefServerToggleValue}
                         onChange={(value: boolean) => {
                             backend.setCEFServerState(value);
@@ -49,11 +49,11 @@ const Content: VFC<{ server: ServerAPI }> = ({server}) => {
                     />
                 </PanelSectionRow>
             </PanelSection>
-            <PanelSection title="Settings">
+            <PanelSection title="設定">
                 <PanelSectionRow>
                     <ToggleField
                         label="Linux Huge Pages"
-                        description="Enables Kernel Huge Pages support"
+                        description="啟用 Kernel Huge Pages 支援"
                         checked={largePagesToggleValue}
                         onChange={(value: boolean) => {
                             backend.setHugePagesState(value);
